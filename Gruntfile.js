@@ -70,6 +70,10 @@ module.exports = function(grunt) {
       }
     },
     browserify: {
+      options: {
+        debug: true,
+        transform: ['debowerify'],
+      },
       dev: {
         files: {
           './tmp/js/app.module.js': ['public/app/app.js'],
