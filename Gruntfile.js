@@ -64,11 +64,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    open: {
-      server: {
-        url: 'http://localhost:<%= express.options.port %>'
-      }
-    },
     karma: {
       unit: {
         configFile: 'test/client/karma-unit.conf.js',
@@ -113,5 +108,5 @@ module.exports = function(grunt) {
     }
   }
 
-  grunt.registerTask('default', ['clean:tmp', 'concurrent:dev', 'express:livereload', 'open', 'watch']);
+  grunt.registerTask('default', ['clean:tmp', 'concurrent:dev', 'express:livereload', 'watch']);
 };
