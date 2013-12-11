@@ -11,7 +11,7 @@ require('./home/home');
 
 // Kick off the app
 angular.module('mllrsohn', [
-    'mllrsohn.common',
+    'mllrsohn.common', // Goes first
     'mllrsohn.home'
 ]).config(function($urlRouterProvider) {
 

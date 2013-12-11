@@ -6,7 +6,8 @@ var shared = function(config) {
         browsers: ['Chrome'],
         preprocessors: {
             '**/*.html': ['ng-html2js'],
-            'public/app/app.js': ['browserify']
+            'public/app/app.js': ['browserify'],
+            'test/client/helper/**/*.js': ['browserify']
         },
         ngHtml2JsPreprocessor: {
             stripPrefix: 'public/'
@@ -27,7 +28,6 @@ var shared = function(config) {
 
 // Mocha config
 shared.files = [
-    'node_modules/chai/chai.js',
     'test/client/helper/libs.js',
     'test/client/mocha.conf.js',
     'public/app/app.js',

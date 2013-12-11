@@ -8,9 +8,9 @@ module.exports = function(config) {
     //extra testing code
     'public/vendor/angular-mocks/angular-mocks.js',
 
-    './test/client/helper/**/*.js',
+    'test/client/helper/**/*.js',
 
     //test files
-    './test/client/specs/**/*.js'
+    'test/client/specs/**/*.js'
   ]);
 };

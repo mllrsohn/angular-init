@@ -2,14 +2,14 @@
   "name": "mllrsohn",
   "version": "0.0.1",
   "dependencies": {
-    "angular": "~1.2.1",
-    "angular-mocks": "~1.2.1",
-    "angular-scenario": "~1.2.1",
-    "angular-resource": "~1.2.1",
-    "angular-cookies": "~1.2.1",
-    "angular-sanitize": "~1.2.1",
-    "angular-ui-router": "~0.2.0",
-    "angular-animate": "~1.2.1",
+    "angular": "~1.2.4",
+    "angular-mocks": "~1.2.4",
+    "angular-scenario": "~1.2.4",
+    "angular-resource": "~1.2.4",
+    "angular-cookies": "~1.2.4",
+    "angular-sanitize": "~1.2.4",
+    "angular-ui-router": "~0.2.7",
+    "angular-animate": "~1.2.4",
     "lodash": "~2.2.1"
   }
 }
