@@ -1,21 +1,17 @@
-var bower = require('./../bower.json');
-
 var shared = function(config) {
     config.set({
-        basePath: '../',
+        basePath: '../../',
         frameworks: ['mocha', 'browserify'],
         reporters: ['progress'],
         browsers: ['Chrome'],
         preprocessors: {
             '**/*.html': ['ng-html2js'],
-            'public/app/**/*.js': ['coverage'],
-            'test/*': ['browserify']
+            'public/app/app.js': ['browserify']
         },
         ngHtml2JsPreprocessor: {
             stripPrefix: 'public/'
         },
         autoWatch: true,
-        // these are default values anyway
         singleRun: false,
         colors: true,
         coverageReporter: {
@@ -23,21 +19,18 @@ var shared = function(config) {
             dir: 'test/coverage/'
         },
         browserify: {
-            // extensions: ['.coffee'],
-            // ignore: [],
-            // transform: ['coffeeify'],
-            // debug: true,
-            // noParse: ['jquery'],
-            watch: true,
+            transform: ['debowerify'],
+            watch: true
         }
     });
 };
 
 // Mocha config
 shared.files = [
-    'test/mocha.conf.js',
-    'public/app/*.js',
-    'public/app/**/*.js',
+    'node_modules/chai/chai.js',
+    'test/client/helper/libs.js',
+    'test/client/mocha.conf.js',
+    'public/app/app.js',
     'public/app/**/*.html'
 ];
 

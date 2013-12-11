@@ -1,5 +1,5 @@
 // initialize Module
-angular.module('mllrsohn.home', []);
+angular.module('mllrsohn.home', ['mllrsohn.common']);
 
 // require Module specifics
 require('./homeController');

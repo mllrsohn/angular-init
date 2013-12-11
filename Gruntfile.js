@@ -69,6 +69,15 @@ module.exports = function(grunt) {
         url: 'http://localhost:<%= express.options.port %>'
       }
     },
+    karma: {
+      unit: {
+        configFile: 'test/client/karma-unit.conf.js',
+        autoWatch: true
+      },
+      e2e: {
+        configFile: 'test/client/karma-e2e.conf.js'
+      }
+    },
     browserify: {
       options: {
         debug: true,

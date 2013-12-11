@@ -37,7 +37,9 @@
     "debowerify": "~0.3.0",
     "deglobalify": "~0.2.0",
     "deamdify": "~0.1.1",
-    "decomponentify": "0.0.3"
+    "decomponentify": "0.0.3",
+    "karma-browserify": "0.0.6",
+    "chai": "~1.8.1"
   },
   "dependencies": {
     "express": "~3.4.6",
