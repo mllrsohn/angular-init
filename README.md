@@ -1,16 +1,17 @@
 angular-init
 ============
 
-# Koa
-# gulp
-# browserify
-# stylus
-# angular
+* Koa
+* gulp
+* browserify
+* stylus
+* angular
 
-$ clone && npm install && bower install && npm install gulp -g
+#### Install
+  ```$ clone && npm install && bower install && npm install gulp -g```
 
-Run
-$ gulp
+#### Run
+  ```$ gulp ```
 
-Test
-$ gulp karma
+#### Test
+  ```$ gulp karma```
