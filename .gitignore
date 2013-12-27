@@ -12,8 +12,8 @@ logs
 results
 
 npm-debug.log
-node_modules
-public/vendor
+/node_modules/
+/public/app/node_modules/bower_components/
 
 .tmp
 tmp

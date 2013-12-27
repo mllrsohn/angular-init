@@ -1,0 +1,16 @@
+<section class="home">
+  <div class="container">
+    <article class="content">
+      <header class="page-header">
+        <h2><code>ultimate-seed</code> includes:</h2>
+      </header>
+      <div class="features">
+        <ul>
+          <li ng-repeat="item in items | orderBy:'text'">
+            <a ng-href="{{ item.url }}">{{ item.text }}</a>
+          </li>
+         </ul>
+      </div>
+    </article>
+  </div>
+</section>

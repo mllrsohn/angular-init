@@ -24,11 +24,9 @@
   "smarttabs": true,
   "jquery": true,
   "globals": {
-    "angular": false,
-    "require": false,
-    "ngDefine": true,
+    "angular": true,
     "describe": true,
-    "beforeEach":true,
+    "beforeEach": true,
     "expect": true,
     "it": true
   }
