@@ -1,4 +1,16 @@
 angular-init
 ============
 
-An opinionated grunt+angular+browserify+express+stylus
+# Koa
+# gulp
+# browserify
+# stylus
+# angular
+
+$ clone && npm install && bower install && npm install gulp -g
+
+Run
+$ gulp
+
+Test
+$ gulp karma
