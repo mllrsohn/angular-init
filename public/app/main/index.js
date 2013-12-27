@@ -5,7 +5,7 @@
 'use strict';
 
 var angular = require('angular'),
-    ngModule = angular.module('mllrsohn.main', []);
+    ngModule = angular.module('mllrsohn.main', ['ui.router']);
 
 // Controllers
 require('./controllers/home')(ngModule);

@@ -1,7 +1,7 @@
-var shared = function(config) {
+module.exports = function(config) {
     config.set({
         basePath: '../../',
-        frameworks: ['mocha'],
+        frameworks: ['mocha', 'browserify'],
         reporters: ['progress'],
         browsers: ['Chrome'],
         preprocessors: {
@@ -21,16 +21,15 @@ var shared = function(config) {
         },
         browserify: {
             watch: true
-        }
+        },
+        files: [
+            'test/client/helper/libs.js',
+            'test/client/mocha.conf.js',
+            'public/app/index.js',
+            'public/app/**/*.html',
+            'public/app/node_modules/bower_components/angular-mocks/angular-mocks.js',
+            'test/client/helper/**/*.js',
+            'test/client/specs/**/*.js'
+        ]
     });
 };
-
-// Mocha config
-shared.files = [
-    'test/client/helper/libs.js',
-    'test/client/mocha.conf.js',
-    'public/app/index.js',
-    'public/app/**/*.html'
-];
-
-module.exports = shared;
