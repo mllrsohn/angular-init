@@ -1,22 +1,22 @@
-// Vendors
-require('angular');
-require('angular-ui-router');
+/*
+ * public/app/app.js
+ */
 
+'use strict';
 
-// Application specifics: Generall
-require('./common/common');
+var angular = require('angular');
 
-// Application specifics: Pages
-require('./home/home');
+var ngModule = angular.module('mllrsohn', [
+  'ngAnimate',
+  'ngCookies',
+  'ngSanitize',
+  'ui.router',
+  'mllrsohn.common',
+  'mllrsohn.layout',
+  'mllrsohn.main'
+]);
 
-// Kick off the app
-angular.module('mllrsohn', [
-    'mllrsohn.common', // Goes first
-    'mllrsohn.home'
-]).config(function($urlRouterProvider) {
-
-    $urlRouterProvider.otherwise('/home');
-
-}).controller('AppCtrl', function() {
-
+// Enable HTML5 Mode.
+ngModule.config(function ($locationProvider) {
+  $locationProvider.html5Mode(true);
 });

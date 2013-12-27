@@ -1,12 +1,12 @@
 var shared = function(config) {
     config.set({
         basePath: '../../',
-        frameworks: ['mocha', 'browserify'],
+        frameworks: ['mocha'],
         reporters: ['progress'],
         browsers: ['Chrome'],
         preprocessors: {
             '**/*.html': ['ng-html2js'],
-            'public/app/app.js': ['browserify'],
+            'public/app/index.js': ['browserify'],
             'test/client/helper/**/*.js': ['browserify']
         },
         ngHtml2JsPreprocessor: {
@@ -20,7 +20,6 @@ var shared = function(config) {
             dir: 'test/coverage/'
         },
         browserify: {
-            transform: ['debowerify'],
             watch: true
         }
     });
@@ -30,7 +29,7 @@ var shared = function(config) {
 shared.files = [
     'test/client/helper/libs.js',
     'test/client/mocha.conf.js',
-    'public/app/app.js',
+    'public/app/index.js',
     'public/app/**/*.html'
 ];
 

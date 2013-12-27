@@ -1,30 +1,11 @@
 'use strict';
 module.exports = function(grunt) {
 
-  var _ = grunt.util._,
-    pkg = require('./package.json'),
-    path = require('path');
-
-  // configurable paths
-  var yeomanConfig = {
-    app: 'public',
-    dist: 'build'
-  };
-
-  try {
-    yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
-  } catch (e) {}
-
-
-  // Grunt Utils
-  // ==============
-
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   require('time-grunt')(grunt);
 
-  // grunt.initConfig
-  // =======
   grunt.initConfig({
-    pkg: pkg,
+    pkg: require('./package.json'),
     watch: {
       browserify: {
         files: ['public/app/**/*.js'],
@@ -38,32 +19,6 @@ module.exports = function(grunt) {
     clean: {
       tmp: ['./tmp']
     },
-    express: {
-      options: {
-        port: 3030,
-        hostname: '*'
-      },
-      livereload: {
-        options: {
-          server: path.resolve('./server'),
-          livereload: true,
-          serverreload: false,
-          bases: [path.resolve('./tmp'), path.resolve(__dirname, yeomanConfig.app)]
-        }
-      },
-      test: {
-        options: {
-          server: path.resolve('./server'),
-          bases: [path.resolve('./tmp'), path.resolve(__dirname, 'test')]
-        }
-      },
-      dist: {
-        options: {
-          server: path.resolve('./server'),
-          bases: path.resolve(__dirname, yeomanConfig.dist)
-        }
-      }
-    },
     karma: {
       unit: {
         configFile: 'test/client/karma-unit.conf.js',
@@ -73,14 +28,24 @@ module.exports = function(grunt) {
         configFile: 'test/client/karma-e2e.conf.js'
       }
     },
-    browserify: {
-      options: {
-        debug: true,
-        transform: ['debowerify'],
-      },
+    nodemon: {
       dev: {
+        options: {
+          file: 'server/index.js',
+          nodeArgs: ['--harmony'],
+          env: {
+            PORT: '3030'
+          }
+        }
+      }
+    },
+    browserify: {
+      dev: {
+        options: {
+          debug: true,
+        },
         files: {
-          './tmp/js/app.module.js': ['public/app/app.js'],
+          './tmp/js/app.module.js': ['public/app/index.js'],
         }
       }
     },
@@ -99,14 +64,5 @@ module.exports = function(grunt) {
     }
   });
 
-
-  // Dependencies
-  // ============
-  for (var name in pkg.devDependencies) {
-    if (name.substring(0, 6) === 'grunt-') {
-      grunt.loadNpmTasks(name);
-    }
-  }
-
-  grunt.registerTask('default', ['clean:tmp', 'concurrent:dev', 'express:livereload', 'watch']);
+  grunt.registerTask('default', ['clean:tmp', 'concurrent:dev', 'nodemon:dev', 'watch']);
 };
