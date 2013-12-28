@@ -91,12 +91,12 @@ gulp.task('default', function() {
 // Setting up the test task
 gulp.task('karma', function() {
     gulp.src([
-        'test/client/helper/libs.js',
+        'public/app/node_modules/bower_components/json3/lib/json3.js',
+        'test/client/helper/**/*.js',
         'test/client/mocha.conf.js',
         'public/app/index.js',
         'public/app/**/*.html',
         'public/app/node_modules/bower_components/angular-mocks/angular-mocks.js',
-        'test/client/helper/**/*.js',
         'test/client/specs/**/*.js'
     ]).pipe(karma({
         configFile: './test/client/karma.config.js',

@@ -13,6 +13,6 @@ describe('Unit: Testing Configurator Controller', function() {
     }));
 
     it('should be available', function() {
-        expect(HomeCtrl).to.not.be.undefined;
+        expect(HomeCtrl).to.not.be(undefined);
     });
 });

@@ -1,4 +1,2 @@
-// We use browserify to load chai #swag
-var chai = require('chai');
-window.expect = chai.expect;
-window.should = chai.should();
+// We use browserify to load expect.js #swag
+window.expect = require('expect.js');

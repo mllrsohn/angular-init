@@ -27,7 +27,10 @@
     "karma-mocha": "~0.1.1",
     "karma-browserify": "0.0.6",
     "karma-ng-html2js-preprocessor": "~0.1.0",
-    "gulp-karma": "0.0.1"
+    "gulp-karma": "0.0.1",
+    "karma-ievms": "0.0.4",
+    "iectrl": "0.0.3",
+    "expect.js": "~0.2.0"
   },
   "dependencies": {
     "lodash": "~2.4.1",

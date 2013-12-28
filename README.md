@@ -15,3 +15,5 @@ angular-init
 
 #### Test
   ```$ gulp karma```
+
+This will test in Chrome and IE8 (WinXP) via Virtualbox. You can install IE8 via ```node_modules/.bin/iectrl install 8,WinXP```

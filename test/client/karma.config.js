@@ -3,11 +3,11 @@ module.exports = function(config) {
         basePath: '../../',
         frameworks: ['mocha', 'browserify'],
         reporters: ['progress'],
-        browsers: ['Chrome'],
+        browsers: ['IE8 - WinXP', 'Chrome'],
         preprocessors: {
             '**/*.html': ['ng-html2js'],
             'public/app/index.js': ['browserify'],
-            'test/client/helper/**/*.js': ['browserify']
+            'test/client/helper/libs.js': ['browserify']
         },
         ngHtml2JsPreprocessor: {
             stripPrefix: 'public/'
