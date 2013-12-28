@@ -26,7 +26,8 @@
     "mocha": "~1.16.2",
     "karma-mocha": "~0.1.1",
     "karma-browserify": "0.0.6",
-    "karma-ng-html2js-preprocessor": "~0.1.0"
+    "karma-ng-html2js-preprocessor": "~0.1.0",
+    "gulp-karma": "0.0.1"
   },
   "dependencies": {
     "lodash": "~2.4.1",

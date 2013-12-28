@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 var refresh = require('gulp-livereload');
 var lrserver = lr();
 var spawn = require('child_process').spawn;
+var karma = require('gulp-karma');
 
 
 // Variables
@@ -59,17 +60,10 @@ gulp.task('lr-server', function() {
 gulp.task('nodemon', function(cb) {
     spawn('./node_modules/.bin/nodemon', ['--watch', 'server', '--debug', '--harmony', 'server/index.js'], {
         stdio: 'inherit'
-    }).on('close', function() {
-        cb();
-    });
-});
-
-// Karma
-gulp.task('karma', function(cb) {
-    spawn('node_modules/karma/bin/karma', ['start', 'test/client/karma.config.js'], { stdio: 'inherit'})
-    .on('close', function() {
-        cb();
-    });
+    })
+        .on('close', function() {
+            cb();
+        });
 });
 
 
@@ -92,4 +86,20 @@ gulp.task('default', function() {
         gulp.run('scripts');
     });
 
+});
+
+// Setting up the test task
+gulp.task('karma', function() {
+    gulp.src([
+        'test/client/helper/libs.js',
+        'test/client/mocha.conf.js',
+        'public/app/index.js',
+        'public/app/**/*.html',
+        'public/app/node_modules/bower_components/angular-mocks/angular-mocks.js',
+        'test/client/helper/**/*.js',
+        'test/client/specs/**/*.js'
+    ]).pipe(karma({
+        configFile: './test/client/karma.config.js',
+        action: 'watch'
+    }));
 });
