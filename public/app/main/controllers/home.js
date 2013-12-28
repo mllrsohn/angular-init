@@ -6,6 +6,6 @@
 
 exports = module.exports = function (ngModule) {
   ngModule.controller('HomeCtrl', function ($scope) {
-    $scope.items = ['1', '2'];
+    $scope.items = ['1', '2', '3'];
   });
 };

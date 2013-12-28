@@ -74,7 +74,7 @@ gulp.task('default', function() {
     gulp.src(paths.tmp.src).pipe(rimraf());
 
     // We run stylus
-    gulp.run('lr-server', 'nodemon', 'stylus', 'scripts');
+    gulp.run('lr-server', 'nodemon', 'scripts', 'stylus');
 
     // Watch for Stylus
     gulp.watch(paths.stylus.src, function() {
