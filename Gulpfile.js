@@ -10,7 +10,7 @@ var refresh = require('gulp-livereload');
 var lrserver = lr();
 var spawn = require('child_process').spawn;
 var karma = require('gulp-karma');
-
+var protractor = require('gulp-protractor');
 
 // Variables
 var paths = {
@@ -67,6 +67,17 @@ gulp.task('nodemon', function(cb) {
 });
 
 
+// webdriver setup and run
+gulp.task('webdriver', function(cb) {
+    spawn('./node_modules/.bin/webdriver-manager', ['update'], { stdio: 'inherit' }).on('close', function() {
+        spawn('./node_modules/.bin/webdriver-manager', ['start'], { stdio: 'inherit' }).on('close', function() {
+            cb();
+        });
+    });
+});
+
+
+
 // Setting up the default Task
 gulp.task('default', function() {
 
@@ -103,3 +114,15 @@ gulp.task('karma', function() {
         action: 'watch'
     }));
 });
+
+
+
+// Setting up the test task
+gulp.task('protractor', function() {
+    gulp.src(['./test/client/e2e/**/*.js']).pipe(protractor({
+        configFile: './test/client/protractor.conf.js'
+    }));
+});
+
+
+// node_modules/.bin/webdriver-manager update

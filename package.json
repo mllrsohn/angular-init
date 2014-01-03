@@ -12,16 +12,16 @@
     "url": "https://github.com/mllrsohn/angular-init/issues"
   },
   "devDependencies": {
-    "gulp-stylus": "0.0.5",
-    "gulp": "~3.2.1",
+    "gulp-stylus": "0.0.7",
+    "gulp": "~3.2.2",
     "gulp-rimraf": "0.0.5",
-    "gulp-browserify": "~0.2.2",
-    "gulp-concat": "~2.1.4",
+    "gulp-browserify": "~0.2.3",
+    "gulp-concat": "~2.1.6",
     "tiny-lr": "0.0.5",
     "gulp-livereload": "~0.1.1",
-    "nodemon": "~0.7.10",
+    "nodemon": "~1.0.1",
     "chai": "~1.8.1",
-    "karma": "~0.11.12",
+    "karma": "~0.10.9",
     "karma-chrome-launcher": "~0.1.2",
     "mocha": "~1.16.2",
     "karma-mocha": "~0.1.1",
@@ -30,20 +30,21 @@
     "gulp-karma": "0.0.1",
     "karma-ievms": "0.0.4",
     "iectrl": "0.0.3",
-    "expect.js": "~0.2.0"
+    "expect.js": "~0.2.0",
+    "protractor": "~0.15.0",
+    "gulp-protractor": "0.0.1"
   },
   "dependencies": {
     "lodash": "~2.4.1",
-    "koa": "~0.1.2",
-    "koa-static": "~1.4.0",
     "co-views": "~0.1.0",
     "swig": "~1.2.2",
-    "koa-router": "~2.1.0",
+    "koa-router": "~2.2.0",
     "koa-logger": "~1.1.0",
     "koa-compress": "~1.0.0",
     "koa-response-time": "~1.0.1",
     "co-body": "0.0.1",
     "debug": "~0.7.4",
-    "browserify": "~3.14.1"
+    "browserify": "~3.18.0",
+    "koa": "~0.2.1"
   }
 }
