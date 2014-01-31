@@ -1,0 +1,46 @@
+/*
+ * {{fn}}
+ */
+
+ 'use strict';
+
+ describe('Unit: {{name}} Directive', function() {
+    var element, scope, compile, defaultData,
+        validTemplate = '<{{name}}></{{name}}>';
+
+    function createDirective(data, template) {
+        var elm;
+
+        // Setup scope state
+        scope.data = data || defaultData;
+
+        // Create directive
+        elm = compile(template || validTemplate)(scope);
+
+        // Return
+        return elm;
+    }
+
+    beforeEach(function() {
+        angular.mock.module('{{base}}.{{module}}');
+
+        /* Mock Service / Provider
+        module(function($provide) {
+            $provide.value('XXXX', true);
+        });
+        */
+
+        // Inject in angular constructs otherwise,
+        //  you would need to inject these into each test
+        inject(function ($rootScope, $compile) {
+            scope = $rootScope.$new();
+            compile = $compile;
+        });
+    });
+
+    it('should render the expected output', function () {
+        element = createDirective();
+        return expect(element.text()).to.equal('');
+    });
+
+});

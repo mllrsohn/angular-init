@@ -1,0 +1,36 @@
+/*
+ * {{fn}}
+ */
+
+'use strict';
+
+var angular = require('angular'),
+    ngModule = angular.module('{{base}}.{{module}}', ['ui.router']);
+
+// Controllers
+require('./controllers/{{module}}')(ngModule);
+
+/*
+// Providers
+require('./providers/provider')(ngModule);
+
+// Directives
+require('./directives/directive')(ngModule);
+
+// Filters
+require('./filters/filter')(ngModule);
+*/
+
+// Routes
+ngModule.config(function ($stateProvider) {
+  $stateProvider
+    .state('{{base}}.{{module}}', {
+      url: '/{{module}}',
+      views: {
+        '@': {
+          controller: '{{module}}Ctrl',
+          templateUrl: 'app/{{module}}/templates/{{module}}.html'
+        }
+      }
+    });
+});

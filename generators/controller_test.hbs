@@ -1,0 +1,27 @@
+/*
+ * {{fn}}
+ */
+
+ 'use strict';
+
+ describe('Unit: {{name}}Ctrl', function() {
+    var {{name}}Ctrl, scope;
+    beforeEach(function() {
+        angular.mock.module('{{base}}.{{module}}');
+        /* Mock Service / Provider
+        module(function($provide) {
+            $provide.value('XXXX', true);
+        });
+        */
+    });
+
+    beforeEach(inject(function($rootScope, $controller) {
+        scope = $rootScope.$new();
+        {{name}}Ctrl = $controller('{{name}}Ctrl', { $scope: scope});
+    }));
+
+    it('{{name}}Ctrl should be available', inject(function() {
+        expect({{name}}Ctrl).to.not.be.undefined;
+    }));
+
+});

@@ -1,0 +1,34 @@
+/*
+ * {{fn}}
+ */
+
+'use strict';
+
+module.exports = function(ngModule) {
+
+    ngModule.provider('{{name}}', function() {
+        var settings = {};
+
+        // Can be called within app.config,
+        // {{name}}Provider.settings({});
+        this.settings = function(newSettings) {
+            settings = newSettings
+        };
+
+        // Public API
+        var {{name}}Provider = {
+            $get: function() {
+                // Get's called when someone
+                // injects the provider for the
+                // first time
+                console.log('{{name}}Provider init');
+            },
+            someFunction: function() {
+
+            }
+        };
+
+        return {{name}}Provider;
+    });
+
+};

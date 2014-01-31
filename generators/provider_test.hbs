@@ -1,0 +1,31 @@
+/*
+ * {{fn}}
+ */
+
+ 'use strict';
+
+ describe('Unit: {{name}}Provider', function() {
+
+    beforeEach(angular.mock.module('{{base}}.{{module}}'));
+
+    it('should do some stuff with http', inject(function({{name}}, $httpBackend) {
+      // $httpBackend.expectGET('/someURL').respond({});
+      // {{name}}.someFunction();
+      // $httpBackend.flush();
+    }));
+
+    describe('Unit: {{name}}Provider Config', function() {
+        beforeEach(function() {
+           module('{{base}}.{{module}}', function({{name}}Provider) {
+                {{name}}Provider.settings({
+                    a: '1'
+                });
+           });
+        });
+
+        it('should do some stuff with the config', inject(function({{name}}) {
+            // {{name}}.someFunction();
+        }));
+    });
+
+});
